@@ -1,35 +1,30 @@
-import { GoogleLoginButton } from "ts-react-google-login-component";
+import { Button, Variant } from '../common/Button';
+import { FacebookBtn } from '../common/FacebookBtn';
+import { GoogleBtn } from '../common/GoogleBtn';
 
 export const LoginScreen = () => {
-  const preLoginTracking = () => {
-    console.log('Attemp to login with google');
-  }
-
-  const errorHandler= (error: string) => {
-    // handle error if login got failed...
-    console.error(error)
-  }
-
-  //@ts-ignore
-  const responseGoogle = (googleUser: gapi.auth2.GoogleUser) => {
-    const id_token = googleUser.getAuthResponse(true).id_token
-    const googleId = googleUser.getId()
-
-    console.log({ googleId })
-    console.log({accessToken: id_token})
-    // Make user login in your system
-    // login success tracking...
-  }
-
-  const google_client = { client_id: process.env.REACT_APP_GOOGLE_APPLICATION_CREDENTIALS }
   return (
-    <div>
-      <GoogleLoginButton
-        responseHandler={responseGoogle}
-        clientConfig={google_client}
-        preLogin={preLoginTracking}
-        failureHandler={errorHandler}
-      />
+    <div style={{backgroundImage: `url(/assets/asset1.png)`}}>
+      <div className='flex-1 items-end flex pt-14'>
+        <div className='flex-1 bg-white rounded-t-lg rounded-r-lg px-5 py-10 flex flex-col justify-between h-full '>
+         <div>
+           <p className='text-primary text-lg font-semibold'>Registrate</p>
+           <p className='text-primary mt-3 text-sm'>Con tus redes sociales</p>
+           <div className='flex flex-col gap-4 mt-10'>
+             <FacebookBtn onClick={() => {}} isLoading={true}/>
+             <GoogleBtn onClick={() => {}} />
+           </div>
+         </div>
+          <div>
+            <p className='text-primary mt-3 text-sm'>Registarte con tu correo</p>
+            <div className='flex flex-col gap-4 mt-6'>
+              <Button onClick={() => {}} text='Registro con correo' />
+            </div>
+          </div>
+
+          <Button onClick={() => {}} text='Cerrar' variant={Variant.SECONDARY} />
+        </div>
+      </div>
     </div>
   )
 }
