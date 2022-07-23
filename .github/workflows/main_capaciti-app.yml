@@ -3,6 +3,9 @@
 
 name: Build and deploy container app to Azure Web App - capaciti-app
 
+env:
+  REACT_APP_GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.REACT_APP_GOOGLE_APPLICATION_CREDENTIALS }}
+
 on:
   push:
     branches:
@@ -31,7 +34,7 @@ jobs:
       with:
         push: true
         tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_5d38471d381143f28994434fb5481a17 }}/delmerlh/capaciti-front:${{ github.sha }}
-        file: ./Dockerfile
+        file: ./capaciti-front/Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
