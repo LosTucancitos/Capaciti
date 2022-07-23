@@ -34,7 +34,7 @@ jobs:
       with:
         context: .
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_5d38471d381143f28994434fb5481a17 }}/delmerlh/capaciti-front:${{ github.sha }}
+        tags: ${{ secrets.AzureAppService_ContainerUsername_5d38471d381143f28994434fb5481a17 }}/capaciti-front:latest
         file: ./capaciti-front/Dockerfile
 
   deploy:
