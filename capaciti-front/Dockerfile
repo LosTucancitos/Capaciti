@@ -8,7 +8,7 @@ RUN ls -la
 
 RUN npm install
 
-COPY . .
+COPY ./capaciti-front .
 
 EXPOSE 3000
 
