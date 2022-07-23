@@ -52,4 +52,4 @@ jobs:
         app-name: 'capaciti-app'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_69e2903251474619a242594594a7fd3a }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_5d38471d381143f28994434fb5481a17 }}/delmerlh/capaciti-front:${{ github.sha }}'
+        images: '${{ secrets.AzureAppService_ContainerUsername_5d38471d381143f28994434fb5481a17 }}/capaciti-front:latest'
