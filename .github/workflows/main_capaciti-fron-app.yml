@@ -4,7 +4,7 @@
 name: Build and deploy container app to Azure Web App - capaciti-fron-app
 
 env:
-  REACT_APP_GOOGLE_APPLICATION_CREDENTIALS: ${{ secret.REACT_APP_GOOGLE_APPLICATION_CREDENTIALS }}
+  REACT_APP_GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.REACT_APP_GOOGLE_APPLICATION_CREDENTIALS }}
 
 on:
   push:
