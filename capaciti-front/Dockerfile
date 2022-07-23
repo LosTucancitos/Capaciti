@@ -1,10 +1,10 @@
-FROM node:16.15
+FROM node:lts-alpine3.15
 
 WORKDIR /usr/src/app
 
 COPY package*.json ./
 
-CMD ["ls", "-l"]
+RUN ls -la
 
 RUN npm install
 
