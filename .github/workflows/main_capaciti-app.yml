@@ -32,6 +32,7 @@ jobs:
     - name: Build and push container image to registry
       uses: docker/build-push-action@v2
       with:
+        context: .
         push: true
         tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_5d38471d381143f28994434fb5481a17 }}/delmerlh/capaciti-front:${{ github.sha }}
         file: ./capaciti-front/Dockerfile
