@@ -35,7 +35,7 @@ jobs:
         context: .
         push: true
         tags: ${{ secrets.AzureAppService_ContainerUsername_a81f92afcab842619867d45a6503c7cb }}/capaciti-front:latest
-        file: ./Dockerfile
+        file: ./capaciti-front/Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
