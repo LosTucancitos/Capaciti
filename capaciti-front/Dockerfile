@@ -2,7 +2,7 @@ FROM node:lts-alpine3.15
 
 WORKDIR /usr/src/app
 
-COPY package*.json ./
+COPY ./capaciti-front/package*.json ./
 
 RUN ls -la
 
