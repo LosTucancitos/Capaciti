@@ -10,6 +10,4 @@ RUN npm install
 
 COPY ./capaciti-front .
 
-EXPOSE 3000
-
 CMD [ "npm", "start" ]

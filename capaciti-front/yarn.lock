@@ -8499,6 +8499,11 @@
   "resolved" "https://registry.npmjs.org/tryer/-/tryer-1.0.1.tgz"
   "version" "1.0.1"
 
+"ts-react-google-login-component@^1.1.9":
+  "integrity" "sha512-1Qu10q+LrXUvpFChyKfveIWB+iDQSYTvFvcgPDNJUiwSqqlLoZRXDS3TuHjOG/eZhhy3f3YxzidabluKh2/rjw=="
+  "resolved" "https://registry.npmjs.org/ts-react-google-login-component/-/ts-react-google-login-component-1.1.9.tgz"
+  "version" "1.1.9"
+
 "tsconfig-paths@^3.14.1":
   "integrity" "sha512-fxDhWnFSLt3VuTwtvJt5fpwxBHg5AdKWMsgcPOOIilyjymcYVZoCQF8fvFRezCNfblEXmi+PcM1eYHeOAgXCOQ=="
   "resolved" "https://registry.npmjs.org/tsconfig-paths/-/tsconfig-paths-3.14.1.tgz"
