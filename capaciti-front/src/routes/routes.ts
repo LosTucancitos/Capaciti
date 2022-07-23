@@ -6,6 +6,7 @@ import { LazyExoticComponent } from 'react';
 import { LoginScreen } from '../components/login/LoginScreen';
 import { HomeScreen } from '../components/home/HomeScreen';
 import { Roles } from '../models/Roles';
+import { CourseScreen } from '../components/course/CourseScreen';
 
 type JSXElement = () => JSX.Element;
 
@@ -55,4 +56,13 @@ export const routes: RouteI[] = [
     allowedRoles: [ Roles.ALL ],
     showInNavbar: true
   },
+  {
+    to: '/course',
+    path: 'course/*',
+    name: 'CourseScreen',
+    loginRequired: false,
+    Component: CourseScreen,
+    allowedRoles: [ Roles.ALL ],
+    showInNavbar: false
+  }
 ]

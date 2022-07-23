@@ -4,7 +4,7 @@ import { Navigation } from './routes/Navigation';
 
 function App() {
   return (
-    <div className="App h-screen">
+    <div className="App">
       <Provider store={store}>
         <Navigation/>
       </Provider>
