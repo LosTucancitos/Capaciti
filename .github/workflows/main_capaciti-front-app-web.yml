@@ -3,6 +3,9 @@
 
 name: Build and deploy container app to Azure Web App - capaciti-front-app-web
 
+env:
+  REACT_APP_GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.REACT_APP_GOOGLE_APPLICATION_CREDENTIALS }}
+
 on:
   push:
     branches:
