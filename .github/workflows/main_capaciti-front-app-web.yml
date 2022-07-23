@@ -34,7 +34,7 @@ jobs:
       with:
         push: true
         tags: mcr.microsoft.com/${{ secrets.AzureAppService_ContainerUsername_bb9a3f28fc104a228e859b0284c441e9 }}/appsvc/staticsite:${{ github.sha }}
-        file: ./Dockerfile
+        file: ./capaciti-front/Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
