@@ -3,6 +3,9 @@
 
 name: Build and deploy container app to Azure Web App - capaciti-app
 
+env:
+  REACT_APP_GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.REACT_APP_GOOGLE_APPLICATION_CREDENTIALS }}
+
 on:
   push:
     branches:
@@ -29,9 +32,10 @@ jobs:
     - name: Build and push container image to registry
       uses: docker/build-push-action@v2
       with:
+        context: .
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_e1b8d3f8c3a14ee88f1fff0a8df56b7d }}/delmerlh/capaciti-front:${{ github.sha }}
-        file: ./Dockerfile
+        tags: ${{ secrets.AzureAppService_ContainerUsername_e1b8d3f8c3a14ee88f1fff0a8df56b7d }}/capaciti-front:latest
+        file: ./capaciti-front/Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
@@ -45,7 +49,8 @@ jobs:
       id: deploy-to-webapp
       uses: azure/webapps-deploy@v2
       with:
+        context: .
         app-name: 'capaciti-app'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_e4e5c6508cf24d8497ec1ef86a91b01a }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_e1b8d3f8c3a14ee88f1fff0a8df56b7d }}/delmerlh/capaciti-front:${{ github.sha }}'
+        images: '${{ secrets.AzureAppService_ContainerUsername_e1b8d3f8c3a14ee88f1fff0a8df56b7d }}/capaciti-front:latest'
