@@ -49,7 +49,6 @@ jobs:
       id: deploy-to-webapp
       uses: azure/webapps-deploy@v2
       with:
-        context: .
         app-name: 'capaciti-app'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_69e2903251474619a242594594a7fd3a }}
